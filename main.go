@@ -1,7 +1,10 @@
 package main
 
-// run server
+import "log"
 
+// run server
 func main() {
-	RunServer()
+	if err := RunServer(); err != nil {
+		log.Fatalf("failed to serve: %v", err)
+	}
 }
